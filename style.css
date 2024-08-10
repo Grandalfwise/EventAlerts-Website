@@ -1,0 +1,366 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&display=swap');
+
+@keyframes show {
+    0%{opacity:0}
+    100%{opacity:var(--target-show,1)}
+}
+
+html, body, main {
+    height: 100%;
+    position: relative;
+}
+
+html {
+    background: #3d1602;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Sacramento", system-ui;
+    /* overflow: hidden; */
+    opacity: 0;
+    animation: show 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.3s forwards;
+}
+
+.logofont {
+    font-family: "Sacramento";
+}
+
+/*Navbar*/
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    z-index: 3;
+    top: 0;
+    background: linear-gradient(to right, orange, yellow, orange);
+    color: #000000;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 0 5px 0 #0007;
+    user-select: none;
+    height: 45px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    gap: 12px;
+}
+
+nav > ul a {
+    display: block;
+    text-decoration: none;
+    color: darkred;
+    padding: 4px 10px;
+    border-radius: 5px;
+    transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
+    user-select: text;
+    cursor: pointer;
+}
+
+nav > ul a:hover {
+    background: orange;
+    color: black;
+    box-shadow: 0 0 5px 0 #fff3, inset 0 0 3px 0 #fff2;
+}
+
+
+section {
+    height: calc(100% - 200px);
+    color: #000000;
+    font-size: 1.3em;
+    display: grid;
+    align-content: center;
+    padding-left: 7%;
+}
+
+/*Makes the title look unique*/
+.logo {
+    font-size: 3em;
+    color: #0000;
+    width: fit-content;
+    background: linear-gradient(45deg, red, orange);
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+}
+
+.logo::after {
+    content: attr(c);
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    opacity: 0.8;
+    scale: 1.1;
+    filter: blur(5px);
+    z-index: -1;
+    background: inherit;
+    background-clip: text;
+    margin-top: 1px;
+}
+
+/*Makes the text closer together*/
+section:first-of-type > p {
+    max-width: 30%;
+}
+
+/*Custom scrollbar*/
+::-webkit-scrollbar {
+    background: #e1be31;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.133);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.133);
+}
+
+.grid {
+    display: grid;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.card {
+    display: flex;
+    background: linear-gradient(100deg, orange, yellow);
+    box-shadow: 3px 1px 3px 1px orange;
+    border-radius: 10px;
+    padding: 12px;
+    flex-direction: column;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover {
+    rotate: 5deg;
+    filter: none;
+    z-index: 2;
+}
+
+.cardTitle {
+    font-weight: bold;
+    font-size: 25px;
+    font-weight: 760;
+    letter-spacing: 0.5px;
+}
+
+/*The buttons*/
+.btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid yellow;
+  outline: none;
+  transition: 1s ease-in-out;
+  transform: translate(0%, 0%);
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: orange;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 300;
+}
+
+
+/*For the background animations*/
+.wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	pointer-events: none;
+}
+
+.round {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: orange;
+	border: 5px solid orange;
+	opacity: 0;
+	box-shadow: 0 0 100px orange, 0 0 10px orange, 0 0 20px orange;
+	animation: animate 6s linear infinite, ani-2 2s linear infinite;
+}
+.round:nth-child(1) {
+	left: 5%;
+	animation-delay: 0.5s;
+}
+.round:nth-child(2) {
+	left: 65%;
+	animation-delay: 1s;
+}
+.round:nth-child(3) {
+	left: 90%;
+	animation-delay: 1.5s;
+}
+.round:nth-child(4) {
+	left: 18%;
+	animation-delay: 2s;
+}
+.round:nth-child(5) {
+	left: 93%;
+	animation-delay: 2.5s;
+}
+.round:nth-child(6) {
+	left: 52%;
+	animation-delay: 3s;
+}
+.round:nth-child(7) {
+	left: 65%;
+	animation-delay: 3.5s;
+}
+.round:nth-child(8) {
+	left: 35%;
+	animation-delay: 4s;
+}
+.round:nth-child(9) {
+	left: 85%;
+	animation-delay: 4.5s;
+}
+.round:nth-child(10) {
+	left: 45%;
+	animation-delay: 5s;
+}
+.round:nth-child(11) {
+	left: 36%;
+	animation-delay: 5.5s;
+}
+.round:nth-child(12) {
+	left: 72%;
+	animation-delay: 6s;
+}
+.round:nth-child(13) {
+	left: 14%;
+	animation-delay: 6.5s;
+}
+.round:nth-child(14) {
+	left: 70%;
+	animation-delay: 7s;
+}
+@keyframes animate {
+	0% {
+		top: 0;
+		opacity: 1;
+	}
+	10% {
+		top: 20%;
+		opacity: 0.9;
+	}
+	30% {
+		top: 40%;
+		opacity: 0.7;
+	}
+	50% {
+		top: 60%;
+		opacity: 0.5;
+	}
+	70% {
+		top: 80%;
+		opacity: 0.3;
+	}
+	90% {
+		top: 100%;
+		opacity: 0.1;
+	}
+    100% {
+        top: 120%;
+        opacity: 0;
+    }
+}
+@keyframes ani-2 {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(2.5);
+	}
+}
+
+
+
+
+.glow-on-hover {
+    border: none;
+    outline: none;
+    color: #000000;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, orange, yellow, red);
+    position: absolute;
+    top: -8px;
+    left:-8px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(100deg, orange, yellow);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}

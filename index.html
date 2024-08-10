@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Alerts</title>
+    <meta name="description" content="A website made for the Event Alerts Discord. https://discord.gg/skeppy" />
+    <meta name="keywords" content="events, minecraft, event alerts, skeppy" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/eventalerts.png"> <meta name="author" content="Grandalfwise" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+    </div>
+    <nav id="navbar">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a onclick="scrollToId('events')">Events</a></li>
+            <li><a href="https://discord.gg/skeppy">Discord</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="logo logofont" c="EventAlerts">Event Alerts</h1>
+        <div class="cards">
+            <div class="card glow-on-hover">
+                <p>Event Alerts is a Discord server for announcing every event in every server in the Minecraft event community!</p>
+            </div>
+            <div class="card glow-on-hover">
+                <p>If you want to be notified about every single event, or specific types of events (Cash Events, Fun Events, Youtuber Events, Housing, etc.) make sure to join.</p>
+            </div>
+        </div>
+    </section>
+    <section id="events">
+        <div class="cards">
+            <div class="card glow-on-hover">
+                <p class="cardTitle">Skeppy Events</p>
+                <p>We are the only place to announce every Skeppy Event when it happens.</span>
+                <button class="btn" onclick="openFile('events/skeppy.html')">
+                    <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                      </svg>
+                      <span>Learn More</span>
+                </button>
+            </div>
+            <div class="card glow-on-hover">
+                <p class="cardTitle">Community Event</p>
+                <p>We have a giant community that is always hosting different events.</span>
+                    <button class="btn" onclick="openFile('events/community.html')">
+                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                        </svg>
+                          <span>Learn More</span>
+                    </button>
+            </div>
+            <div class="card glow-on-hover">
+                <p class="cardTitle">Partner Events</p>
+                <p>Partners and staff can ping their own events in their own channel.</span>
+                    <button class="btn" onclick="openFile('events/partner.html')">
+                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                          </svg>
+                          <span>Learn More</span>
+                    </button>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="index.js"></script>
+<script src="animation.js"></script>
+</html>
+
