@@ -3,8 +3,6 @@
     padding: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&display=swap');
-
 @keyframes show {
     0%{opacity:0}
     100%{opacity:var(--target-show,1)}
@@ -363,4 +361,25 @@ svg {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
+}
+
+.icon a {
+    transition: ease 0.5s;
+	width: 80px;
+	height: 80px;
+	background: linear-gradient(135deg, #ffa500 0%, #ffff00 100%);;
+	font-size: 40px;
+	margin: 0 15px;
+	display: block;
+	line-height: 80px;
+	text-align: center;
+	position: relative;
+	border-radius: 50px;
+	overflow: hidden;
+	box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+    margin-left: 50px;
+}
+.icon a:hover {
+    transition: ease 0.5s;
+    transform: scale(1.1);
 }
